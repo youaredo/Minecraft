@@ -1,0 +1,724 @@
+/*公共样式*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    transition: all .3s;
+    font-family: Consolas, sans-serif;
+    user-select: none;
+    user-drag: none;
+}
+
+body{
+    overflow-x: hidden;
+    width:100%;
+    height: 100vh;
+}
+
+.message_bg{
+    background: url("../images/bg.png") no-repeat;
+    background-size: cover;
+    height:100%;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+#app{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*head*/
+.logo{
+    font-size: 35px;
+    font-weight:bold;
+}
+.logo a{
+    color: #eb0028;
+}
+
+header{
+    width:100%;
+    height:8%;
+    position: relative;
+    background: rgb(255,255,255);
+}
+
+.head{
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 20px;
+}
+
+header article>div{
+    cursor: pointer;
+}
+
+.mx-wd{
+    max-width:1850px;
+    margin:0 auto;
+}
+
+.user{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+
+.user img,.message img{
+    width:45px;
+}
+
+.user_message{
+    border-top:3px solid #eb0028;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width:150px;
+    right:-150px;
+    top:75px;
+    height:210px;
+    display: flex;
+    opacity: 0;
+    background: white;
+    z-index: 10;
+}
+
+.user_message>*{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    text-align: center;
+}
+.user_message>p{
+    font-size:25px;
+    flex:1;
+}
+
+.user_message>div{
+    cursor: pointer;
+    width:100%;
+    height:30%;
+}
+
+.user_message>div:hover{
+    background: #eb0028;
+}
+
+.aside{
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    font-size:20px;
+    position: relative;
+    background: white;
+    width:250px;
+    padding:10px;
+    overflow: auto;
+    margin:0 20px;
+    color:black;
+}
+
+.aside_ctrl{
+    position: absolute;
+    bottom:0;
+    margin:0 !important;
+    width:100% !important;
+}
+
+.aside_ctrl>div{
+    flex:1;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:30px;
+}
+
+.aside_ctrl:hover{
+    background: none !important;
+}
+
+.aside_ctrl>div:hover{
+    background: #eb0028;
+}
+
+.aside>div,.aside>div span{
+    width:50px;
+    height:50px;
+    display: flex;
+    margin:1px;
+    justify-content: center;
+    align-items: center;
+}
+
+.aside>div span{
+    border:2px dashed #dcdcdc;
+    width:100%;
+}
+
+.active{
+    cursor: pointer;
+    background:#eb0028 content-box;
+    color:white;
+    border:none !important;
+}
+
+.aside>div:hover,.aside span:hover{
+    cursor: pointer;
+    background:#eb0028 content-box;
+    color:white;
+    border-color:red;
+}
+
+.user_message>div:hover>*,.user_message>div:hover a{
+    color: white;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back{
+    right:0;
+    opacity: 1;
+}
+
+/*login*/
+
+.login{
+    position: relative;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/msalogin-bg-glob.jpg") no-repeat;
+}
+
+/*.login_bottom_bg{*/
+/*    position: absolute;*/
+/*    bottom:0;*/
+/*    height:400px;*/
+/*    width:100%;*/
+/*    background-size: cover;*/
+/*}*/
+
+.login_container{
+    display: flex;
+    flex-direction: column;
+    background-size: 100%;
+    max-width:500px;
+    width:95%;
+    margin:20px;
+    position: relative;
+    background:rgba(255,255,255,1);
+    z-index: 10;
+    padding:25px;
+}
+
+.login_container>div{
+    display: flex;
+    margin:15px 0;
+    flex-direction: column;
+}
+
+
+.login_container h1{
+    font-weight:normal;
+    text-align: left;
+    font-size:45px;
+}
+
+.login_container input{
+    margin:5px 0;
+    font-size:15px;
+}
+
+.login_container input:focus{
+    padding-left:20px !important;
+}
+
+.login_container input[type="text"],.login_container input[type="password"],.login_container input[type="date"]{
+    padding:5px 10px;
+    height:45px;
+}
+
+.login_container button{
+    margin-top:20px;
+    background-color: #313131;
+    color:white;
+    border:none;
+    box-shadow: inset 0 -4px rgb(0 0 0 / 25%), inset 0 4px hsl(0deg 0% 100% / 35%), inset -4px 0 hsl(0deg 0% 100% / 35%), inset 4px 0 rgb(0 0 0 / 25%);
+    padding:20px;
+}
+
+.login_container button a{
+    color:white;
+}
+
+.login_container button:hover{
+    cursor: pointer;
+    background-color: #3c8527;
+}
+
+/*message*/
+
+.message,.todoList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    background: url("../images/bg.png") no-repeat;
+    background-size: cover;
+}
+
+.message>div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.login_top{
+    top:-100px;
+    left:37%;
+    width:120px;
+    position: absolute;
+}
+
+.message_container{
+    display: flex;
+    flex-direction: column;
+    max-width:750px;
+    width:750px;
+    height:775px;
+    overflow: auto;
+    background-size: cover;
+}
+
+.message_container::-webkit-scrollbar{
+    display: none;
+}
+
+.message_post{
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+/*外用*/
+.post {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.post img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.post__header {
+    position: relative;
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #EAEAEA;
+}
+
+.post__header > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+.post__header > div :nth-child(1) {
+    color: rgba(0, 0, 0, .5);
+    font-size: 12px;
+}
+
+.floors {
+    position: absolute;
+    right: 20px;
+    color: #eb0028;
+    font-size: 14px;
+}
+
+.post__header img{
+    background: transparent;
+}
+
+.post__content {
+    padding: 40px 0;
+    font-size: 14px;
+    border-bottom:1px solid #dcdcdc;
+}
+
+.post__btns {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+.post--send textarea {
+    resize: none;
+    box-sizing: border-box;
+    margin: 0 0 20px;
+    display: block;
+    width: 100%;
+    height: 140px;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #101920;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 2px;
+}
+
+
+
+.btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 45px;
+    color: white;
+    border: none;
+    background: #eb0028;
+    transition: .1s;
+}
+
+.post--send textarea:focus{
+    padding-left:20px;
+}
+
+.btn:hover{
+    filter: brightness(1.1);
+}
+
+.delete_btn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin:10px 0;
+}
+
+.delete_btn button{
+    cursor: pointer;
+    padding:13px 30px;
+    background: #eb0028;
+    border:none;
+    margin-bottom: -10px;
+    color: white;
+}
+
+@media screen and (max-width:764px){
+    .message>div{
+        width:95%;
+    }
+}
+
+/*todoList*/
+
+.pos{
+    position: relative;
+}
+.video{
+    position: absolute;
+    width:100%;
+    height:100%;
+    display: flex;
+    z-index:100;
+    justify-content: center;
+    align-items: center;
+    background:rgba(0,0,0,.8);
+}
+
+.video>video{
+    width:960px;
+    height:540px;
+}
+
+.todoList{
+    background:url("../images/1183450.jpg");
+    background-size:cover;
+}
+
+.todoList_container{
+    height:500px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:url("../images/yxbg_b81eeec.png");
+}
+
+.todoList_container>div{
+    width:1000px;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoList_aside{
+    flex-basis:255px;
+    display: flex;
+    flex-direction: column;
+}
+
+.todoList_aside img{
+    width:35px;
+}
+
+.todoList_aside a{
+    margin-right:20px;
+    color:white;
+    font-weight:bold;
+    font-size: 20px;
+    text-shadow: 1px 1px rgb(0 0 0 / 50%);
+}
+
+.todoList_message,.todoList_complete{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    height: 405px;
+    font-weight:bold;
+    font-size:20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    color:white;
+}
+
+.todoList_message>div:first-child{
+    display: flex;
+    align-items: center;
+    margin-bottom:20px;
+    padding-left:20px;
+    background: rgba(97, 195, 85,1);
+    height:50px;
+}
+.todoList_message>div:last-child{
+    border:4px solid rgba(97, 195, 85,1);
+    flex:1;
+}
+
+
+.todoList_aside>div{
+    background: url("../images/navon_f988310.png");
+    padding:10px;
+    width:203px;
+    margin:10px 0;
+    height:60px;
+}
+
+.todoList_aside>div:hover{
+    cursor: pointer;
+    filter:brightness(1.1);
+}
+
+.todoList_aside>div>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*url*/
+
+.article__main{
+    display: flex;
+    flex-direction: column;
+}
+
+.article__main>div{
+    border-bottom:4px solid rgba(97, 195, 85,1);
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+    font-size:18px;
+    margin:8px 11px;
+}
+
+.article__main>div:last-child{
+    border: none;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.article__main>div:last-child>h4{
+    font-size:17px;
+}
+
+.space-bet{
+    justify-content: space-between;
+}
+
+.space-bet>p:last-child{
+    cursor: pointer;
+    margin-right:20px;
+}
+
+.space-bet>p a{
+    color: white;
+}
+
+.article__main input[type="date"],.article__main input[type="text"]{
+    width:200px;
+    padding:10px;
+    height:30px;
+    border:none;
+    color: white;
+    outline: none;
+    border-bottom:2px solid white;
+    background: transparent;
+}
+
+.article__main textarea{
+    border:3px solid white;
+    color: white;
+    background: transparent;
+    padding:10px;
+    margin-left:5px;
+    resize: none;
+    outline: none;
+}
+
+.todoList_complete textarea{
+    resize: none;
+    background: transparent;
+    outline: none;
+    border:1px solid #dcdcdc;
+    width:100%;
+    height:100%;
+    color: green;
+    padding:10px;
+    margin:10px 0;
+}
+
+.todoList_complete,.create_todoList{
+    position: relative;
+    overflow: auto;
+    background: white;
+}
+
+.todoList_complete>div{
+    padding:10px;
+    margin:10px;
+    font-size:16px;
+    color:green;
+    display: flex;
+    flex-direction: column;
+    height:305px;
+    border:4px solid rgba(97, 195, 85,1);
+}
+
+.todoList_complete>div>div:first-child{
+    padding:0 0 10px 0;
+    border-bottom:4px solid rgba(97, 195, 85,1);
+}
+
+.todoList_complete>div>div:last-child{
+    display: flex;
+   justify-content: flex-end;
+}
+
+
+.todoList_complete button{
+    background:rgba(97, 195, 85,1);
+    color:white;
+    border:none;
+    padding:15px 45px;
+}
+
+.todoList_complete h6{
+    font-size:30px;
+    position: absolute;
+    top:45%;
+    left:33%;
+    color:green;
+}
+
+
+.todoList_complete button:hover{
+    cursor: pointer;
+    filter:brightness(1.1);
+}
+
+.todoList_complete::-webkit-scrollbar{
+    display: none;
+}
+
+.todoList_complete>h5{
+    color: black !important;
+}
+
+.create_todoList{
+    padding:10px;
+    color:green;
+}
+
+.create_todoList input[type="date"]{
+    padding:5px;
+    width:100%;
+    height:45px;
+    outline: none;
+    cursor: pointer;
+    border:1px solid #dcdcdc;
+}
+
+.create_todoList>div{
+    padding:5px;
+}
+
+.create_todoList p{
+    margin:5px 0;
+}
+
+.create_todoList textarea{
+    padding:10px;
+    outline: none;
+    resize: none;
+    border:1px solid #dcdcdc;
+    width:100%;
+}
+
+.create_todoList button{
+    width:200px;
+    height:50px;
+    color:white;
+    background: green;
+    border:none;
+}
+
+.create_todoList button:hover{
+    cursor: pointer;
+    filter:brightness(1.3);
+}
+
+
+
+
+
+
+
+
